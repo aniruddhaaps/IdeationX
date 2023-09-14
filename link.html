@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TownTales</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Adjust the logo size and make it responsive */
+        .logo {
+            max-height: 50px; /* Set the maximum height as needed */
+            width: auto;
+            height: auto;
+        }
+
+        /* Add background color to navbar links on hover */
+        .navbar-nav .nav-link:hover {
+            background-color: #F3F4F6;
+        }
+
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        /* CSS for restaurant widgets */
+        .restaurant-widget {
+            width: 250px;
+            height: auto;
+            border: 1px solid #ccc; /* Optional: Add a border for visual separation */
+            margin: 10px; /* Optional: Add margin for spacing between widgets */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Other CSS styles for your widget components */
+        .restaurant-img {
+            max-width: 100%;
+            max-height: 150px; /* Adjust the maximum height for the image */
+        }
+
+        .restaurant-rating {
+            color: #FFD700; /* Gold color for rating */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="rounded-circle logo" src="https://th.bing.com/th/id/OIG.Hl.TgjdD5lMUJLI9lBSp?pid=ImgGn" alt="Logo" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#" onclick="loadContent('RESTAURANTS')">RESTAURANTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#" onclick="loadContent('SALOONS')">SALOONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#" onclick="loadContent('STATIONARY')">STATIONARY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#" onclick="loadContent('HOME_AND_LIVING')">HOME AND LIVING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#" onclick="loadContent('OFFERS')">OFFERS</a>
+                    </li>
+                </ul>
+                <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search for services" />
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4" id="content">
+        <!-- Content will be loaded here -->
+    </div>
+
+    <script>
+        // Function to load content based on category
+        function loadContent(category) {
+            // You can fetch content from a server/database based on the category
+            // For now, we'll use sample text and restaurant widgets
+            let content = '';
+
+            if (category === 'RESTAURANTS') {
+                content = `
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="https://lh3.googleusercontent.com/p/AF1QipM8Tt0HcEDgLQn7tSI_PveEsDX02jyCz1wB1lKw=s1360-w1360-h1020" alt="Restaurant 1">
+                        <div class="restaurant-name">Little India</div>
+                        <div class="restaurant-rating">Rating: 4.5</div>
+                    </div>
+                    
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="murugan idli.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Murugan Idli Shop</div>
+                        <div class="restaurant-rating">Rating: 4.4</div>
+                    </div>
+
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="Masaladar.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Masaldaar Dhaba</div>
+                        <div class="restaurant-rating">Rating: 4.2</div>
+                    </div>
+
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="Paati Veedu.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Paati Veedu</div>
+                        <div class="restaurant-rating">Rating: 4</div>
+                    </div>
+                `;
+            } else if (category === 'SALOONS') {
+                // Placeholder for Saloons content
+                content = `
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="Olympic saloon.jpg" alt="Restaurant 1">
+                        <div class="restaurant-name">Olympic Beauty Saloon</div>
+                        <div class="restaurant-rating">Rating: 3.9</div>
+                    </div>
+                    
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="Angel.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Angel Beauty Parlour</div>
+                        <div class="restaurant-rating">Rating: 4.4</div>
+                    </div>
+
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="Miss India.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Miss India Ladies and Kids Beauty Parlour</div>
+                        <div class="restaurant-rating">Rating: 4.2</div>
+                    </div>
+
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="Eadhal saloon.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Eadhal Gents Beauty Parlour</div>
+                        <div class="restaurant-rating">Rating: 3</div>
+                    </div>
+                `;  } else if (category === 'STATIONARY') {
+                // Placeholder for Stationary content
+                content = `
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="Anadha.jpg" alt="Restaurant 1">
+                        <div class="restaurant-name">Anandha Stationary Stores</div>
+                        <div class="restaurant-rating">Rating: 4</div>
+                    </div>
+                    
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="halima.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Halima Fancy & Stationary</div>
+                        <div class="restaurant-rating">Rating: 3.9</div>
+                    </div>
+
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="STAtion.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Nithya Stationary</div>
+                        <div class="restaurant-rating">Rating: 4.2</div>
+                    </div>
+
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="JPS .jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">JPS Ramalakshmi Stationary & Store</div>
+                        <div class="restaurant-rating">Rating: 4.1</div>
+                    </div>
+                `;
+            } else if (category === 'HOME_AND_LIVING') {
+                // Placeholder for Home and Living content
+                content = `
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="Ganesh.jpg" alt="Restaurant 1">
+                        <div class="restaurant-name">Anandha Stationary Stores</div>
+                        <div class="restaurant-rating">Rating: 4</div>
+                    </div>
+                    
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="halima.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Halima Fancy & Stationary</div>
+                        <div class="restaurant-rating">Rating: 3.9</div>
+                    </div>
+
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="STAtion.jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">Nithya Stationary</div>
+                        <div class="restaurant-rating">Rating: 4.2</div>
+                    </div>
+
+                    <div class="restaurant-widget">
+                        <img class="restaurant-img" src="JPS .jpg" alt="Restaurant 2">
+                        <div class="restaurant-name">JPS Ramalakshmi Stationary & Store</div>
+                        <div class="restaurant-rating">Rating: 4.1</div>
+                    </div>
+                `;
+            } else if (category === 'OFFERS') {
+                // Placeholder for Offers content
+                content = '<p>Welcome to the OFFERS section. This is a sample content for offers.</p>';
+            }
+
+            // Update the content container with the selected category's content
+            document.getElementById('content').innerHTML = content;
+        }
+    </script>
+</body>
+</html>

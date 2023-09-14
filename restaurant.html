@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <!-- Add Bootstrap CSS and JavaScript -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="your-logo-url" alt="Logo" class="logo mr-5" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">RESTAURANTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">SALOONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">STATIONARY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">HOME AND LIVING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-2" href="#">OFFERS</a>
+                    </li>
+                </ul>
+                <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search for services"/>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+       $(document).ready(function () {
+            $("#searchInput").hide(); // Hide the search input initially
+
+            $(".fa-search").click(function () {
+                $("#searchInput").toggle("fast");
+            });
+        });
+    </script>
+</body>
+</html>
